@@ -9,9 +9,9 @@ on:
       - main
 
 env:
-  CLOUDSMITH_NAMESPACE: ${{ vars.CLOUDSMITH_NAMESPACE }}
-  CLOUDSMITH_REPOSITORY: "staging"
-  CLOUDSMITH_SERVICE_SLUG: ${{ vars.CLOUDSMITH_SERVICE_SLUG }}
+  CLOUDSMITH_NAMESPACE: "interview-vinayak-jain"
+  CLOUDSMITH_REPOSITORY: "interview-vinayak-jain"
+  CLOUDSMITH_SERVICE_SLUG: "interview-vinayak-jain/interview-vinayak-jain"
 
 permissions:
   contents: read
