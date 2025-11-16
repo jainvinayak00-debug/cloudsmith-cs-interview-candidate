@@ -9,10 +9,10 @@ on:
         type: string
 
 env:
-  CLOUDSMITH_NAMESPACE: ${{ vars.CLOUDSMITH_NAMESPACE }}
-  CLOUDSMITH_STAGING_REPO: 'production'
-  CLOUDSMITH_PRODUCTION_REPO: 'staging'
-  CLOUDSMITH_SERVICE_SLUG: ${{ vars.CLOUDSMITH_SERVICE_SLUG }}
+  CLOUDSMITH_NAMESPACE: "interview-vinayak-jain"
+  CLOUDSMITH_STAGING_REPO: 'interview-vinayak-jain'
+  CLOUDSMITH_PRODUCTION_REPO: 'interview-vinayak-jain-prod'
+  CLOUDSMITH_SERVICE_SLUG: "interview-vinayak-jain/interview-vinayak-jain"
   PACKAGE_NAME: 'example_package'
 
 permissions:
@@ -26,8 +26,7 @@ jobs:
       - name: Install Cloudsmith CLI
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.1
         with:
-          oidc-namespace: ${{ env.CLOUDSMITH_NAMESPACE }}
-          oidc-service-slug: ${{ env.CLOUDSMITH_SERVICE_SLUG }}
+          api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
 
       - name: Get package identifier and promote
         run: |
