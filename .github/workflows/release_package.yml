@@ -33,6 +33,9 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
 
 
+      - name: install cloudsmith
+        run: |
+          pip install cloudsmith
 
       - name: List directory contents
         run: ls -la dist/
