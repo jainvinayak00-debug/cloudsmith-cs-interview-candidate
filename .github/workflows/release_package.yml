@@ -37,7 +37,7 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install cloudsmith-cli
 
-      - name: Authenticate Cloudsmith
+      - name: Authenticate Cloudsmith using API Key
         run: cloudsmith login --api-key ${{ secrets.CLOUDSMITH_API_KEY }}
 
       - name: List directory contents
