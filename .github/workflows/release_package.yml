@@ -13,6 +13,7 @@ env:
   CLOUDSMITH_REPOSITORY: "interview-vinayak-jain"
 
 permissions:
+  id-token: write        
   contents: read
   actions: read
 
