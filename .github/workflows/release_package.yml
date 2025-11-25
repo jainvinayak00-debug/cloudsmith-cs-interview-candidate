@@ -16,10 +16,6 @@ permissions:
 jobs:
 
   publish:
-    permissions:
-      id-token: write        
-      contents: read
-      actions: read
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
@@ -32,6 +28,15 @@ jobs:
           repository: ${{ github.repository }}
           github-token: ${{ github.token }}
           run-id: ${{ github.event.workflow_run.id }}
+
+      - name: OIDC Debugger
+        uses: github/actions-oidc-debugger@v1.0.0
+        with:
+          # The audience to use when requesting the JWT. Your Github server URL and repository owner (e.g. https://github.com/github).
+          audience: '${{ github.server_url }}/${{ github.repository_owner }}'
+  
+          
+
 
       - name: Cloudsmith CLI Setup
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
