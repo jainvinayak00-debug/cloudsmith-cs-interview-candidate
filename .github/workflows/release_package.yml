@@ -37,7 +37,7 @@ jobs:
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
         with:
           oidc-namespace: "interview-vinayak-jain"
-          oidc-service-slug: "81f1789758e8c73bd41804ffacd3bbQHce5g"
+          oidc-service-slug: "csa_81f1789758e8c73bd41804ffacd3bbQHce5g"
           oidc-auth-only: true
           
       - name: List directory contents
